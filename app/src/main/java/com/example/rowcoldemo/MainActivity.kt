@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.layout.LastBaseline
+import androidx.compose.ui.layout.FirstBaseline
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,18 +41,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
     Row {
-        Text(
-            text = "Large Text\n\nMore Text",
-            Modifier.alignBy(LastBaseline),
-            fontSize = 40.sp,
-            fontWeight = FontWeight.Bold
-        )
-        Text(
-            text = "Small Text",
-            Modifier.alignByBaseline(),
-            fontSize = 32.sp,
-            fontWeight = FontWeight.Bold,
-        )
+        TextCell("1", Modifier.weight(weight = 0.2f, fill = true))
+        TextCell("2", Modifier.weight(weight = 0.4f, fill = true))
+        TextCell("3", Modifier.weight(weight = 0.3f, fill = true))
     }
 }
 
